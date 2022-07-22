@@ -112,16 +112,14 @@ class LanguageMenu extends FlxSubState
 
 		super.create();
 	}
-          #if android
-      addVirtualPad(LEFT_RIGHT, A_B);
-      #end
+
 	override function update(elapsed:Float)
 	{
 
         switch(state){
 
             case "select":
-                if (controls.LEFT_P)
+                if (FlxG.keys.justPressed.LEFT)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					curSelected -= 1;
@@ -131,7 +129,7 @@ class LanguageMenu extends FlxSubState
                     changeItem();
 				}
 
-				if (controls.RIGHT_P)
+				if (FlxG.keys.justPressed.RIGHT)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					curSelected += 1;
@@ -141,7 +139,7 @@ class LanguageMenu extends FlxSubState
                     changeItem();
 				}
 
-                else if(controls.ACCEPT){
+                else if(FlxG.keys.justPressed.ENTER){
                     quit();
                 }
             case "exiting":
