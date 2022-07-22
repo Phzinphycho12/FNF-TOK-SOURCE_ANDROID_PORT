@@ -368,7 +368,7 @@ class Controls extends FlxActionSet
 			}
 		}
 	}	
-	#endp
+	#end
 	override function update()
 	{
 		super.update();
