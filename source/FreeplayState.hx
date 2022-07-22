@@ -162,7 +162,9 @@ class FreeplayState extends MusicBeatState
 
 			trace(md);
 		 */
-
+          #if android
+      addVirtualPad(FULL, A_B);
+      #end
 		super.create();
 	}
 
@@ -289,7 +291,7 @@ class FreeplayState extends MusicBeatState
 
 	function changeSelection(change:Int = 0)
 	{
-		#if !switch
+		#if (!switch && ng)
 		// NGio.logEvent('Fresh');
 		#end
 
