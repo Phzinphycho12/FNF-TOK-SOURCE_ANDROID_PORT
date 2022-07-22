@@ -41,16 +41,17 @@ class ShopState extends MusicBeatState
 
 		if (FlxG.sound.music != null)
 			FlxG.sound.music.stop();
-	}
-	
+		
 		for (touch in FlxG.touches.list)
 			{
 				FlxG.stage.window.textInputEnabled = true;
-				
-    #if android
+			}
+
+		#if android
 		addVirtualPad(NONE, B);
 		#end
-			}
+
+	}
 
 	function checkpress():Void
 	{
