@@ -16,7 +16,10 @@ class WarningSubState extends MusicBeatState
 	public static var currChanges:String = "dk";
 
 	override function create()
-	{
+	{ 
+          #if android
+      addVirtualPad(NONE, A);
+      #end
 		super.create();
 		
 		var bg:FlxSprite = new FlxSprite(0, -700).loadGraphic(Paths.image('conceptsketch3', 'preload'));
@@ -39,7 +42,7 @@ class WarningSubState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if (FlxG.keys.justPressed.ANY)
+		if (controls.ACCEPT)
 		{
 			leftState = true;
 			FlxG.switchState(new MainMenuState());
