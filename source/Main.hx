@@ -37,6 +37,8 @@ class Main extends Sprite
 
 	public function new()
 	{
+                SUtil.uncaughtErrorHandler();
+
 		super();
 
 		if (stage != null)
@@ -72,6 +74,8 @@ class Main extends Sprite
 			gameWidth = Math.ceil(stageWidth / zoom);
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
+
+                SUtil.check();
 
 		addChild(game);
 
