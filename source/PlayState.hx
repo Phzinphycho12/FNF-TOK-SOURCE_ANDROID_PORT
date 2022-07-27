@@ -1271,6 +1271,9 @@ class PlayState extends MusicBeatState
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
 
+          #if android
+      addVirtualPad(FULL, A_B);
+      #end
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
@@ -1341,13 +1344,7 @@ class PlayState extends MusicBeatState
 					startCountdown();
 			}
 		}
-
-		if (!loadRep)
-			rep = new Replay("na");
 			
-          #if android
-      addVirtualPad(FULL, A_B);
-      #end
 		super.create();
 	}
 
